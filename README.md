@@ -239,6 +239,58 @@ for i in range(len(res)):
 
  print("Solution ",i+1," : ",res[i])
 
+# EX NO. 3 DFS 
+## prolog
+go(Start, Goal) :-
+	empty_stack(Empty_been_list),
+	stack(Start, Empty_been_list, Been_list),
+	path(Start, Goal, Been_list).
+	
+	% path implements a depth first search in PROLOG
+	
+	% Current state = goal, print out been list
+path(Goal, Goal, Been_list) :-
+	reverse_print_stack(Been_list).
+	
+path(State, Goal, Been_list) :-
+	mov(State, Next),
+	% not(unsafe(Next)),
+	not(member_stack(Next, Been_list)),
+	stack(Next, Been_list, New_been_list),
+	path(Next, Goal, New_been_list), !.
+	
+reverse_print_stack(S) :-
+	empty_stack(S).
+reverse_print_stack(S) :-
+	stack(E, Rest, S),
+	reverse_print_stack(Rest),
+	write(E), nl.
+  
+## python
+```python
+graph = {
+  '5' : ['3','7'],
+  '3' : ['2', '4'],
+  '7' : ['8'],
+  '2' : [],
+  '4' : ['8'],
+  '8' : []
+}
+
+visited = set() # Set to keep track of visited nodes of graph.
+
+def dfs(visited, graph, node):  #function for dfs 
+    if node not in visited:
+        print (node)
+        visited.add(node)
+        for neighbour in graph[node]:
+            dfs(visited, graph, neighbour)
+
+# Driver Code
+print("Following is the Depth-First Search")
+dfs(visited, graph, '5')
+```
+
 # EX NO.4
 
 ## 1. Write a Program in Prolog to solve any problem using Best First Search. Answer:
