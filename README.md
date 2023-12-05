@@ -38,7 +38,8 @@ write('Sum is: '),write(S).
 
 10. 
 
-Code : count(11). 
+```prolog
+count(11). 
 
 count(N):- 
 
@@ -48,11 +49,12 @@ count(N):-
 
  count(X). 
 
-output: 
+```
 
 ## Program 4: write a prolog in prolog that take number N from the user and count from N to 1. 
 
-Code: loop(0). 
+```prolog
+ loop(0). 
 
 loop(N):-N>0, 
 
@@ -62,13 +64,14 @@ loop(N):-N>0,
 
  loop(X). 
 
-output:
+```
 
 ## Program 5: write a prolog in prolog that take number N from the user calculate factorial of 
 
 number. 
 
-Code: factorial(0, 1). 
+```prolog
+factorial(0, 1). 
 
 factorial(N, X) :- 
 
@@ -80,13 +83,14 @@ factorial(Y, Z),
 
 X is Z * N. 
 
-Output: 
+```
 
 ## Program 6: write a prolog in prolog that take number N from the user calculate square of 
 
 number from N to 20 and display it. 
 
-Code: squares(21). 
+```prolog
+squares(21). 
 
 squares(N) :- 
 
@@ -98,13 +102,14 @@ squares(N) :-
 
  squares(M). 
 
-output:
+```
 
 # EX NO.2
 
 ## Program 1: write a program in prolog to solve N X N queen problem. 
 
-Code: queen(N,Queens):- 
+```prolog
+queen(N,Queens):- 
 
 range(1, N, Rows), 
 
@@ -142,11 +147,12 @@ NewOffset is Offset + 1,
 
 safe(Queens, Queen, NewOffset). 
 
-Output:
+```
 
 ## Program 2 write a program in python to solve N X N queen problem. 
 
-Code: result = [] 
+```prolog
+result = [] 
 
 def isSafe(board, row, col): 
 
@@ -240,8 +246,13 @@ for i in range(len(res)):
 
  print("Solution ",i+1," : ",res[i])
 
+```
+
 # EX NO. 3 DFS 
+
 ## prolog
+
+```prolog
 go(Start, Goal) :-
 	empty_stack(Empty_been_list),
 	stack(Start, Empty_been_list, Been_list),
@@ -266,6 +277,7 @@ reverse_print_stack(S) :-
 	stack(E, Rest, S),
 	reverse_print_stack(Rest),
 	write(E), nl.
+```
   
 ## python
 ```python
@@ -296,6 +308,7 @@ dfs(visited, graph, '5')
 
 ## 1. Write a Program in Prolog to solve any problem using Best First Search. Answer:
 
+```prolog
 % Define your graph with weighted edges and heuristics. % Replace these with your actual graph and heuristics.
 edge(a, b, 2). edge(b, c, 3). edge(b, d, 4). edge(c, e, 5). edge(d, e, 1). edge(e, f, 2). 
 
@@ -316,9 +329,11 @@ Cost1 > Cost2 -> Result = (>);
 Result = (=)). % Example usage:
 
 % To find the path, call best_first_search(StartNode, GoalNode, Path). % Replace StartNo
+```
 
 ## 2. Write a Program in Python to solve any problem using Best First Search. Answer:
 
+```python
 from queue import PriorityQueue
 
 def best_first_search(graph, start, goal):
@@ -385,11 +400,14 @@ else:
 
 print(f"No path found from {start_node} to {goal_node}")
 
-Output:
+```
 
 #EX NO.5
 
 ## BREADTH-FIRST SEARCH
+
+```prolog
+
 bfs(Dests, [[Target,Path,Cost]|_], Target, Path, Cost):- member(Target, Dests).
 bfs(Dests, [[N,P,C]|Queue], Target, Path, Cost):-
   setof([Child,Pp,Cp], child(N, P, C, Child, Pp, Cp), Children),
@@ -409,6 +427,7 @@ arc([L,Da], [L,Db], 1):- leftof(Da, Db) ; rightof(Da, Db).
 % Moving forward is an adjacent state to this one.
 arc([La,D], [Lb,D], 1):- safe(Lb), move(La, D, Lb).
 
+```
 
 ## python
 
