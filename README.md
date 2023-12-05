@@ -1,23 +1,24 @@
-jni bubu# ex no.1
+# ex no.1
 ## Program 1: write a prolog in prolog calculate addition of two number. 
 
-Code : sum(X,Y):- 
+Code : 
+```prolog
+sum(X,Y):- 
 
 S is X+Y, 
 
 write('Sum is: '),write(S). 
-
-output: 
+```
 
 ## Program 2: write a prolog in prolog to find maximum of two number. 
 
-Code: max(X,Y):- 
+```prolog
+
+ max(X,Y):- 
 
  X=Y, 
 
- write('both are equal') 
-
- ; 
+ write('both are equal');
 
  X>Y, 
 
@@ -29,9 +30,9 @@ Code: max(X,Y):-
 
  Z is Y, 
 
- write(Z). 
+ write(Z).
 
-output:
+```
 
 ## Program 3: write a prolog in prolog that take number N from the user and count from N to 
 
